@@ -14,15 +14,11 @@ Ce selfbot Discord permet d'envoyer un message personnalisé à tous vos amis av
 4. Installez les dépendances avec `npm install`
 5. Configurez le selfbot de l'une des manières suivantes :
    
-   **Option 1 : Utiliser un fichier de configuration**
-   - Copiez `config.example.json` vers `config.json`
-   - Modifiez `config.json` avec :
-     - `token` : Votre token Discord
-     - `message` : Le message que vous souhaitez envoyer à tous vos amis
-     - `delayBetweenMessages` : Le délai entre chaque message (en millisecondes)
-   
-   **Option 2 : Modifier directement le fichier index.js**
-   - Ouvrez `index.js` et modifiez les valeurs dans l'objet `config` au début du fichier
+   **Au lancement du script :**
+   - Entrez le Token d'utilisateur
+   - Entrez le message a envoyer
+   - Entrez le delay entre chaque message (500 ms par default)
+   - Entrez des ID d'utilisateur blacklist
 
 ## Comment obtenir votre token Discord
 
@@ -30,34 +26,19 @@ Ce selfbot Discord permet d'envoyer un message personnalisé à tous vos amis av
 
 1. Ouvrez Discord dans votre navigateur
 2. Appuyez sur F12 pour ouvrir les outils de développement
-3. Allez dans l'onglet "Application" (ou "Stockage")
-4. Dans la section "Stockage local", cliquez sur "https://discord.com"
-5. Recherchez la clé "token" 
-6. Copiez la valeur du token (sans les guillemets)
+3. Allez dans l'onglet "Network" et faites Ctrl + R (refresh la page)
+4. Dans le fichier "science", Copiez La valeur notee apres Autorization
+6. Utilisez la dans la configuration du script 
 
 ## Utilisation
 
-Pour lancer le selfbot, exécutez l'une des commandes suivantes dans le terminal :
+Pour lancer le selfbot, Ouvrez le dossier dans le terminal, exécutez la commandes suivante :
 
-```
-npm start
-```
-
-ou 
-
-```
 node index.js
-```
 
 Le selfbot va :
 1. Se connecter à votre compte Discord
 2. Afficher le nombre total d'amis
-3. Envoyer le message configuré à chaque ami avec un délai de 0,5 seconde
+3. Envoyer le message configuré à chaque ami avec un délai de 0,5 seconde (ou la valeur choisi)
 4. Afficher un rapport des messages envoyés une fois terminé
 
-## Personnalisation
-
-Vous pouvez ajuster les paramètres suivants dans le fichier `config.json` :
-
-- `message` : Le message personnalisé à envoyer
-- `delayBetweenMessages` : Le délai entre chaque message (en millisecondes) 
